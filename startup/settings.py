@@ -26,7 +26,7 @@ STA_DIRS= Path(__file__).joinpath(BASE_DIR,'static')
 SECRET_KEY = "django-insecure-xczm*5!owas4a=pvscfzskfmyz8kzls=iophp%l4#1vi6%+cbx"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['.vercel.app','127.0.0.1']
 
@@ -81,8 +81,12 @@ WSGI_APPLICATION = "startup.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql",
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'zfArmGDpNETQEpGkhszwKXCCehvOJqlG',
+        'HOST': 'roundhouse.proxy.rlwy.net',
+        'PORT': '16468',
     }
 }
 
@@ -121,12 +125,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = "static/"
-
 STATICFILES_DIRS=[
     STA_DIRS
 ]
-STATIC_ROOT=os.path.join(BASE_DIR, 'static/')
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
