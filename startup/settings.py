@@ -16,6 +16,7 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEM_DIRS= Path(__file__).joinpath(BASE_DIR,'templates')
+STAT_DIRS= Path(__file__).joinpath(BASE_DIR,'static')
 
 
 # Quick-start development settings - unsuitable for production
@@ -125,7 +126,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    BASE_DIR / 'static',
+    STAT_DIRS
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
