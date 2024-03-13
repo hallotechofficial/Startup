@@ -11,5 +11,7 @@ urlpatterns = [
     path("services",views.service, name="service"),
     path("Project/",views.project, name="project"),
 ] 
-urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-urlpatterns + static(settings.MEDIA_URL, document_root=settings.STATIC_ROOT)
+
+# Add configurations for serving media and static files
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
