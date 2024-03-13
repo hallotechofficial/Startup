@@ -16,7 +16,6 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEM_DIRS= Path(__file__).joinpath(BASE_DIR,'templates')
-STA_DIRS= Path(__file__).joinpath(BASE_DIR,'static')
 
 
 # Quick-start development settings - unsuitable for production
@@ -125,9 +124,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = "static/"
-STATICFILES_DIRS=[
-    STA_DIRS
-]
+STATICFILES_DIRS=[ BASE_DIR/'static']
+STATICFILES_DIRS=os.path.join(BASE_DIR, 'static'),
+STATIC_ROOT=os.path.join(BASE_DIR, 'staticfiles_build','static')
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
