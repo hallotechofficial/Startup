@@ -13,8 +13,17 @@
       "src": "build_files.sh",
       "use": "@vercel/static",
       "config": {
-        "distDir": "staticfiles_build"
+        "distDir": "staticfiles_builds"
       }
+    }
+  ],  "routes": [
+    {
+      "src": "staticfile_build/(.*)",
+      "dest": "staticfile_build/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "startup/wsgi.py"
     }
   ]
 
