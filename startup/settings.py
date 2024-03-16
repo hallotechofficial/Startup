@@ -26,7 +26,7 @@ STA_DIRS= Path(__file__).joinpath(BASE_DIR,'static')
 SECRET_KEY = "django-insecure-xczm*5!owas4a=pvscfzskfmyz8kzls=iophp%l4#1vi6%+cbx"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
 
@@ -135,7 +135,7 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     STA_DIRS,
 ]
-STATIC_ROOT = BASE_DIR / 'staticfiles_build'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
@@ -155,7 +155,6 @@ EMAIL_USE_TLS = True
 #MEDIA
 
 # settings.py
-
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
