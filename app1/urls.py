@@ -6,14 +6,12 @@ from app1 import views
 app_name = 'app1'
 
 urlpatterns = [
-    path("", views.home, name="h"),
+    path("", views.home, name="home"),
     path("about/", views.about, name="about"),
     path("contact/", views.contact, name="contact"),
     path("services/", views.service, name="service"),
-    path("Project/", views.project, name="project"),
+    path("project/", views.project, name="project"),
 ]
 
-# Serve static files during development
-if settings.DEBUG:
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

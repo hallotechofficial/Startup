@@ -1,5 +1,5 @@
 #!/bin/bash
-
+pip install -r requirements.txt
 # Run Django collectstatic command to collect static files
 python manage.py collectstatic --no-input
 
