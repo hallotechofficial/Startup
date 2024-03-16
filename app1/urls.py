@@ -1,7 +1,7 @@
 from django.urls import path
-from app1 import views
 from django.conf import settings
 from django.conf.urls.static import static
+from app1 import views
 
 app_name = 'app1'
 
@@ -13,6 +13,7 @@ urlpatterns = [
     path("Project/", views.project, name="project"),
 ]
 
+# Serve static files during development
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
