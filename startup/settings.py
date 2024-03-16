@@ -16,7 +16,7 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEM_DIRS= Path(__file__).joinpath(BASE_DIR,'templates')
-STA_DIRS= Path(__file__).joinpath(BASE_DIR,'statics')
+STA_DIRS= Path(__file__).joinpath(BASE_DIR,'static')
 
 
 # Quick-start development settings - unsuitable for production
@@ -88,13 +88,12 @@ WSGI_APPLICATION = "startup.wsgi.application"
 
 DATABASES = {
     'default': {
-        'NAME': os.environ.get('DB_NAME', 'Hallotech'),
-        'USER': os.environ.get('DB_USER', 'sriram'),
-        'PASSWORD': os.environ.get('DB_PASSWORD', 'Hallotech@987'),
-        'HOST': os.environ.get('DB_HOST', 'localhost'),
-        'PORT': os.environ.get('DB_PORT', '5432'),
-
-
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'NmMvVNVpucpjWqvEmBzqKhakKvvPZZuM',
+        'HOST': 'roundhouse.proxy.rlwy.net',  # Replace with your PostgreSQL server's address if necessary
+        'PORT': '36661',          # Leave empty to use the default PostgreSQL port (usually 5432)
     }
 }
 
@@ -132,7 +131,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'statics'
+STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     STA_DIRS,
 ]
