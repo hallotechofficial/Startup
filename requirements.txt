@@ -9,6 +9,4 @@ gunicorn>=20.1.0
 django-widget-tweaks>=1.4.8
 django-crispy-forms>=1.12.0
 Pillow>=8.4.0
-boto==2.49.0
-idna==3.3
-jmespath==1.0.1
+
